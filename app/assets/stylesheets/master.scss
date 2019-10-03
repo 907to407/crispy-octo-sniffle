@@ -1,6 +1,5 @@
 @import "bootstrap";
 
-@import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
 
 body {
     background: image_url('crossline-dots.png');
@@ -28,5 +27,6 @@ h1, h2, h3, h4, h5, h6, {
 }
 .navbar-inverse .navbar-brand {
     color: #1F1FDE;
-    font-family: 'Mansalva', cursive;
+    font-family: 'kaushan_scriptregular', sans-serif;
+    font-size: 26px;
 }
