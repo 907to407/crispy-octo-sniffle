@@ -60,10 +60,6 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqJb5AgUsHjDy1S_vswBFcsDO
   <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
 <% end %>
 
-<%= simple_form_for @photo, url: 'place_photo_path(@place)' do |f| %>
-  <%= f.input :caption %>
-  <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
-<% end %>
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
@@ -113,6 +109,22 @@ Add a comment
         <% end %>
         <%= comment.message %>
         <small><%= comment.user.email %></small>
+      </blockquote>
+    </div>
+  <% end %>
+</div>
+
+<%= simple_form_for @photo, url: 'place_photo_path(@place)' do |f| %>
+  <%= f.input :caption %>
+  <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+<% end %>
+
+<div class="row">
+  <% @place.photos.each do |photo| %>
+    <div class="col-12 col-sm-6">
+      <blockquote>
+        <%= photo.caption %>
+        <small><%= photo.user.email %></small>
       </blockquote>
     </div>
   <% end %>
