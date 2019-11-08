@@ -5,4 +5,5 @@ resources :places do
   resources :comments, only: :create
   resources :photo, only: :create
   end
+  resources :users, only: :show
 end

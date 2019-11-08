@@ -61,7 +61,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqJb5AgUsHjDy1S_vswBFcsDO
 <% end %>
 
 <%= simple_form_for @photo, url: 'place_photos_path(@place)' do |f| %>
-  <%= f.input :text %>
+  <%= f.input :caption %>
   <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
 <% end %>
 
