@@ -61,10 +61,6 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqJb5AgUsHjDy1S_vswBFcsDO
 <% end %>
 
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-Add a comment
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -90,14 +86,7 @@ Add a comment
   </div>
 </div>
 
-  <div class="col-10 offset-1">
-  <h1 class="float-left">Comments</h1>
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
-    Add a comment
-  </button>
-  </div>
-  <div class="clear"></div>
+  
 
 
 <div class="row">
@@ -114,9 +103,11 @@ Add a comment
   <% end %>
 </div>
 
-<%= simple_form_for @photo, url: 'place_photo_path(@place)' do |f| %>
+<%= simple_form_for(@photo, method: :post, url: place_photo_index_path(@place)) do |f| %>
   <%= f.input :caption %>
+  <%= f.input :picture %>
   <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+  
 <% end %>
 
 <div class="row">
@@ -124,6 +115,7 @@ Add a comment
     <div class="col-12 col-sm-6">
       <blockquote>
         <%= photo.caption %>
+        <%= image_tag photo.picture.url, class: 'img-fluid' %>
         <small><%= photo.user.email %></small>
       </blockquote>
     </div>
