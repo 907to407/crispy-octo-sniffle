@@ -2,3 +2,4 @@ This is an app where foodies and shopping enthusiasts can post information about
 
 The application was built on a Ruby on Rails framework. The information is saved to a PostgreSQL database. Devise is used for user authentication. The Geocoder API displays Google Maps when a correct street address is entered. SendGrid helps with notifying a user via email when someone else leaves a comment for the restaurant they have shared information on.
 
+<a href="https://imgur.com/XwrqQpd"><img src="https://i.imgur.com/XwrqQpd.png" title="source: imgur.com" /></a>
